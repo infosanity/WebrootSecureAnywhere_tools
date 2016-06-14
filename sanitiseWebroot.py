@@ -13,7 +13,7 @@
 	Version:	v0.9
 	License:	Beerware.....
 
-	Thanks:		Mostly thanks to Al Sweigart's "Automate te boring stuff with Python"
+	Thanks:		Mostly thanks to Al Sweigart's book "Automate the boring stuff with Python"
 """
 
 import os	# File system management 
