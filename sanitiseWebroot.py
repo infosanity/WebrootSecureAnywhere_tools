@@ -10,8 +10,7 @@
 
 	Author:		Andrew Waite <andrew.waite@infosanity.co.uk>
 	Date:		2016-06-10
-	Version:	v0.9
-	License:	Beerware.....
+	Version:	v0.9.1
 
 	Thanks:		Mostly thanks to Al Sweigart's book "Automate the boring stuff with Python"
 """
@@ -87,6 +86,13 @@ if ( os.path.isfile( inputFile ) and csvRegex.search( inputFile ) ):
 
 		# Last Seen column
 		row[3] = str( datetime.datetime.strptime( row[3], webrootDateString ) )
+		
+		# Last Infected column
+		# field is only populated if the endpoint has previously encounted malware
+		try:
+			row[12] = str( datetime.datetime.strptime( row[12], webrootDateString ) )
+		except:
+			pass
 		
 		# write updated row record to output file
 		csvWriter.writerow(row)
